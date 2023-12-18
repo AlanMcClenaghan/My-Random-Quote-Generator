@@ -81,21 +81,42 @@ function getRandomQuote() {
   // get random number between 0 and 9
   let x = Math.floor((Math.random() * 10));
   // get quote at index of random number
-  let quote = quotes[x];
-  // Log quote
-  console.log(quote);
+  return quote = quotes[x];
 }
-
-getRandomQuote();
 
 /***
  * `printQuote` function
 ***/
 function printQuote() {
-  // 
+  // create a variable to store a random quote object returned from the getRandomQuote() function
+  let randomQuote = getRandomQuote();
+  // Log quote
+  console.log("randomQuote: " + randomQuote.quote);
+  // use the returned quote object to build a string of HTML and quote properties
+  let quoteString = 
+  `
+  <p class="quote">${randomQuote.quote}</p>
+  <p class="source">${randomQuote.source}`
+  // use the string to display a random quote in the browser.
 
+  if ( randomQuote.citation ) {
+    quoteString +=
+    `
+    <span class="citation">${randomQuote.citation}</span>`;
+  }
+
+  if ( randomQuote.year ) {
+    quoteString +=
+    `
+    <span class="citation">${randomQuote.year}</span>`;
+  }
+
+  quoteString += `</p>`
+
+  document.getElementById('quote-box').innerHTML = quoteString; 
+
+  console.log(quoteString);
 }
-
 
 /***
  * click event listener for the print quote button
