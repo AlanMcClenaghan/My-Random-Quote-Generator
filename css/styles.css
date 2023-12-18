@@ -101,6 +101,14 @@ h1 {
   content: "—";
 }
 
+.actor:before {
+  content: " (";
+}
+
+.actor:after {
+  content: ")";
+}
+
 .citation {
   font-style: italic;
 }
