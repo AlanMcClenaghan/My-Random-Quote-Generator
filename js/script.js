@@ -70,20 +70,31 @@ const quotes = [
     source: "A Few Good Men",
     citation: "Colonel Nathan R. Jessep",
     year: "1992"
-  },
+  }
 ]
 
 
 /***
  * `getRandomQuote` function
 ***/
+function getRandomQuote() {
+  // get random number between 0 and 9
+  let x = Math.floor((Math.random() * 10));
+  // get quote at index of random number
+  let quote = quotes[x];
+  // Log quote
+  console.log(quote);
+}
 
-
+getRandomQuote();
 
 /***
  * `printQuote` function
 ***/
+function printQuote() {
+  // 
 
+}
 
 
 /***
