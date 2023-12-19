@@ -149,6 +149,11 @@ function printQuote() {
 // Initialise quote on opening
 printQuote();
 
+// Auto-refreshed quotes
+// Create a timing function with the setInterval() method to print a new quote to the page at regular intervals, like every 10 to 20 seconds.
+let autorefresh = window.setInterval(printQuote, 10000);
+
+
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
