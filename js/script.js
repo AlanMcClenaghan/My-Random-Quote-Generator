@@ -89,8 +89,8 @@ const quotes = [
  * 
 ***/
 function getRandomQuote() {
-  // get random number between 0 and 9
-  let x = Math.floor(Math.random() * 10);
+  // get random number between 0 and length of the array
+  let x = Math.floor(Math.random() * quotes.length);
   // returns quote at index of random number
   return quotes[x];
 }
@@ -151,7 +151,7 @@ printQuote();
 
 // Auto-refreshed quotes
 // Create a timing function with the setInterval() method to print a new quote to the page at regular intervals, like every 10 to 20 seconds.
-let autorefresh = window.setInterval(printQuote, 10000);
+let autoRefresh = window.setInterval(printQuote, 10000);
 
 
 /***
