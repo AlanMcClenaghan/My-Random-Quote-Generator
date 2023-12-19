@@ -90,9 +90,17 @@ const quotes = [
 ***/
 function getRandomQuote() {
   // get random number between 0 and 9
-  let x = Math.floor((Math.random() * 10));
+  let x = Math.floor(Math.random() * 10);
   // returns quote at index of random number
-  return quote = quotes[x];
+  return quotes[x];
+}
+
+// Random background colors function
+function randomRGB() {
+  let red = Math.floor(Math.random() * 256);
+  let green = Math.floor(Math.random() * 256);
+  let blue = Math.floor(Math.random() * 256);
+  return rgbColor = `rgb(${red},${green},${blue})`;
 }
 
 /***
@@ -109,6 +117,7 @@ function printQuote() {
   <p class="source">${randomQuote.source}`
 
 
+  // !!!dditional quote object property!!!
   // condition to check if quote has an actor and add it to quoteString
   if ( randomQuote.actor ) {
     quoteString +=
@@ -132,7 +141,13 @@ function printQuote() {
 
   //  code snippet with quoteString variable to update HTML 
   document.getElementById('quote-box').innerHTML = quoteString;
+
+  // When a new quote prints to the page, the background color changes to a random color.
+  document.body.style.backgroundColor = randomRGB()
 }
+
+// Initialise quote on opening
+printQuote();
 
 /***
  * click event listener for the print quote button
